@@ -1,6 +1,7 @@
 import CurrentWeather from "@/components/common/CurrentWeather";
 import HourrlyTemp from "@/components/common/HourrlyTemp";
 import LoadingSkeleton from "@/components/common/LoadingSkeleton";
+import WeatherDetails from "@/components/common/WeatherDetails";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import useGeoLocation from "@/Hooks/useGeoLocation";
@@ -108,11 +109,12 @@ return (
           data={weatherQuery.data}
           locationName={locationName}
         />
-        <HourrlyTemp data={forecastQuery.data} />  {/* Extract .data and non-null assertion (safe due to earlier check) */}
+        <HourrlyTemp data={forecastQuery.data} /> 
       </div>
 
       {/* Future sections */}
       {/* <WeatherDetails /> */}
+      <WeatherDetails data={weatherQuery.data}/>
       {/* <WeeklyForecast /> */}
     </div>
   </div>
