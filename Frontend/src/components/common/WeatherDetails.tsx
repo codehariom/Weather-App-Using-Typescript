@@ -26,7 +26,7 @@ const WeatherDetails = ({data}:WeatherDetailProps) => {
             title:"Sunrise",
             value:formateTime(sys.sunrise),
             icon:Sunrise,
-            color:"text-oranage-500"
+            color:"text-orange-500"
         },
         {
             title:"Sunset",
@@ -48,9 +48,9 @@ const WeatherDetails = ({data}:WeatherDetailProps) => {
         },
     ]
   return (
-    <Card>
+    <Card className=" shadow-lg backdrop-blur-md">
         <CardHeader>
-            <CardTitle>Weather Details</CardTitle>
+            <CardTitle className="text-lg font-semibold tracking-wide" >Weather Details</CardTitle>
         </CardHeader>
         <CardContent>
             <div className=" grid gap-10 sm:grid-cols-2">
