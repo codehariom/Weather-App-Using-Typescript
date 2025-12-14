@@ -23,7 +23,7 @@ const HourlyTemp = ({ data }: HourlyTempProps) => {
     
 if (!data?.list  || data.list.length === 0) {
     return (
-      <Card className="flex-1 shadow-xl">
+      <Card className="flex-1 shadow-lg">
         <CardHeader>
           <CardTitle>Today’s Temperature</CardTitle>
         </CardHeader>
