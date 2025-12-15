@@ -13,8 +13,8 @@ const Header = () => {
           <img
             src={
               isDark
-                ? "/src/assets/cloud-sun-fill.svg"
-                : "/src/assets/cloud-sun.svg"
+                ? "/public/cloud-sun-fill.svg"
+                : "/public/cloud-sun.svg"
             }
             className=" h-15 w-15"
           />
