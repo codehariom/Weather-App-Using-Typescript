@@ -11,7 +11,7 @@ const Header = () => {
       <div className=" flex container mx-auto justify-between items-center ">
 <Link to="/">
   <h3
-    className={`h-15 w-15 font-bold ${
+    className={`h-15 w-15 text-3xl  font-bold ${
       isDark ? "text-white" : "text-black"
     }`}
   >
