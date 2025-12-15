@@ -9,16 +9,15 @@ const Header = () => {
   return (
     <header className=" sticky top-0 z-50 w-full border-b-2 bg-background/60 backdrop-blur-lg py-2 ">
       <div className=" flex container mx-auto justify-between items-center ">
-        <Link to={"/"}>
-          <img
-            src={
-              isDark
-                ? ""
-                : "/public/cloud-sun.svg"
-            }
-            className=" h-15 w-15"
-          />
-        </Link>
+<Link to="/">
+  <h3
+    className={`h-15 w-15 font-bold ${
+      isDark ? "text-white" : "text-black"
+    }`}
+  >
+    {isDark ? "codehariom" : "codehariom"}
+  </h3>
+</Link>
         <div className=" flex gap-5">
           {/* search input  */}
           <CitySearch/>
