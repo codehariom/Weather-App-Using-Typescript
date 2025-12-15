@@ -22,8 +22,8 @@ const FavCity = () => {
     <>
       <h1 className="text-xl font-bold tracking-wide">Favorites</h1>
 
-      <ScrollArea className="pb-4">
-  <div className="flex w-max gap-4">
+      <ScrollArea className="pb-4 ">
+  <div className="flex  gap-4">
     {favorites.map((city) => (
       <FavCityTablet
         key={city.id}

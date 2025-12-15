@@ -85,7 +85,7 @@ const locationError = locationQuery.isError;
 
   /* ================= UI ================= */
 return (
-  <div className="min-h-screen overflow-y-auto space-y-6">
+  <div className="min-h-screen overflow-x-auto space-y-6">
     {/* Favorites */}
     <FavCity />
 
