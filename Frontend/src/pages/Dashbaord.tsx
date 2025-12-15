@@ -1,7 +1,9 @@
 import CurrentWeather from "@/components/common/CurrentWeather";
+import FavCity from "@/components/common/FavCity";
 import HourrlyTemp from "@/components/common/HourrlyTemp";
 import LoadingSkeleton from "@/components/common/LoadingSkeleton";
 import WeatherDetails from "@/components/common/WeatherDetails";
+import WeatherForecast from "@/components/common/WeatherForecast";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import useGeoLocation from "@/Hooks/useGeoLocation";
@@ -27,6 +29,7 @@ function Dashboard() {
     locationQuery.isFetching;
 
 const locationName = locationQuery.data;
+const locationError = locationQuery.isError;
 
   /* ================= LOADING STATE ================= */
   if (isLoading) {
@@ -34,7 +37,7 @@ const locationName = locationQuery.data;
   }
 
   /* ================= LOCATION ERROR ================= */
-  if (error || !coordinates) {
+  if (locationError || !coordinates) {
     return (
       <Alert variant="destructive" className="space-y-4 text-white">
         <AlertTitle>
@@ -82,8 +85,10 @@ const locationName = locationQuery.data;
 
   /* ================= UI ================= */
 return (
-  <div className="space-y-6">
-    {/* Header */}
+  <div className="min-h-screen overflow-y-auto space-y-6">
+    {/* Favorites */}
+    <FavCity />
+
     <div className="flex items-center justify-between">
       <h1 className="text-xl font-semibold tracking-wide">
         My Location
@@ -102,20 +107,17 @@ return (
       </Button>
     </div>
 
-    {/* Weather Content */}
     <div className="grid gap-10">
       <div className="flex flex-col lg:flex-row gap-10">
         <CurrentWeather
           data={weatherQuery.data}
           locationName={locationName}
         />
-        <HourrlyTemp data={forecastQuery.data} /> 
+        <HourrlyTemp data={forecastQuery.data} />
       </div>
 
-      {/* Future sections */}
-      {/* <WeatherDetails /> */}
-      <WeatherDetails data={weatherQuery.data}/>
-      {/* <WeeklyForecast /> */}
+      <WeatherDetails data={weatherQuery.data} />
+      <WeatherForecast data={forecastQuery.data} />
     </div>
   </div>
 );

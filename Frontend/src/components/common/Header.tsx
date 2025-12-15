@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "@/context/ThemeProvider";
-import { Sun, Moon } from "@phosphor-icons/react";
+import { MoonIcon, SunIcon } from "lucide-react";
+import CitySearch from "./CitySearch";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -18,8 +19,9 @@ const Header = () => {
             className=" h-15 w-15"
           />
         </Link>
-        <div>
+        <div className=" flex gap-5">
           {/* search input  */}
+          <CitySearch/>
           {/* Theme toggel  */}
           <div
             onClick={() => setTheme(isDark ? "light" : "dark")}
@@ -28,9 +30,9 @@ const Header = () => {
             }`}
           >
             {isDark ? (
-              <Sun size={32} color="#ffae00" weight="fill" />
+              <SunIcon size={32} color="#ffae00" />
             ) : (
-              <Moon size={32} color="#0099ff" weight="fill" />
+              <MoonIcon size={32} color="#0099ff"  />
             )}
           </div>
         </div>
