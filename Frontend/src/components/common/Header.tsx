@@ -8,30 +8,30 @@ const Header = () => {
   const isDark = theme === "dark";
   return (
     <header className=" sticky top-0 z-50 w-full border-b-2 bg-background/60 backdrop-blur-lg py-2 ">
-      <div className=" flex container mx-auto justify-between items-center ">
-<Link to="/">
-  <h3
-    className={` h-15 text-3xl mt-5  font-bold ${
-      isDark ? "text-white" : "text-black"
-    }`}
-  >
-    {isDark ? "codeHariom" : "codeHariom"}
-  </h3>
-</Link>
+      <div className=" flex container mx-auto justify-evenly md:justify-between items-center ">
+        <Link to="/">
+          <h3
+            className={` h-15 text-3xl mt-5  font-bold ${
+              isDark ? "text-white" : "text-black"
+            }`}
+          >
+            {isDark ? "codeHariom" : "codeHariom"}
+          </h3>
+        </Link>
         <div className=" flex gap-5">
           {/* search input  */}
-          <CitySearch/>
+          <CitySearch />
           {/* Theme toggel  */}
           <div
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className={`flex items-center cursor-pointer transition-transform duration-500 ${
+            className={` hidden md:block  items-center cursor-pointer transition-transform duration-500 ${
               isDark ? "rotate-180" : "rotate-0"
             }`}
           >
             {isDark ? (
               <SunIcon size={32} color="#ffae00" />
             ) : (
-              <MoonIcon size={32} color="#0099ff"  />
+              <MoonIcon size={32} color="#0099ff" />
             )}
           </div>
         </div>
